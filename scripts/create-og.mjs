@@ -1,0 +1,5 @@
+import sharp from 'sharp';
+import { mkdir } from 'node:fs/promises';
+const svg = `<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630"><rect width="1200" height="630" fill="#131716"/><path d="M64 100H1136M64 545H1136" stroke="#343e38"/><text x="64" y="68" font-family="Arial,sans-serif" font-size="20" fill="#a9b4ae">DANIEL DORAL · DESARROLLADOR FULL STACK</text><g font-family="Arial,sans-serif" font-weight="500" font-size="82" letter-spacing="-4"><text x="64" y="225" fill="#f1f1e8">Negocio, datos</text><text x="64" y="325" fill="#8ed7c0">y procesos.</text></g><text x="64" y="430" font-family="Arial,sans-serif" font-size="26" fill="#a9b4ae">Aplicaciones web · APIs · Modernización</text><text x="64" y="588" font-family="Arial,sans-serif" font-size="18" fill="#a9b4ae">MADRID / RIVAS VACIAMADRID</text><text x="1010" y="480" font-family="Arial,sans-serif" font-size="160" letter-spacing="-16" fill="#8ed7c0">d.</text></svg>`;
+await mkdir('public', { recursive: true });
+await sharp(Buffer.from(svg)).png().toFile('public/og.png');

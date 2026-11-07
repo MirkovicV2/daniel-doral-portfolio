@@ -1,0 +1,19 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import { CasePage } from '../../components/Pages';
+import { projects, type Project } from '../../content/projects';
+export function getStaticPaths() {
+  return projects.map((project) => ({
+    params: { slug: project.slug },
+    props: { project },
+  }));
+}
+interface Props {
+  project: Project;
+}
+const { project } = Astro.props;
+---
+
+<Layout title={project.shortTitle} description={project.summary}>
+  <CasePage project={project} />
+</Layout>
