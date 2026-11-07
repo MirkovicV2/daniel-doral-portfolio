@@ -16,6 +16,8 @@ Repositorio privado de la cuenta **MirkovicV2**: https://github.com/MirkovicV2/d
 
 La implementación se integra hacia `develop` mediante la [PR #1 — Portfolio profesional](https://github.com/MirkovicV2/daniel-doral-portfolio/pull/1).
 
+El rediseño basado en investigación se integra mediante la [PR #2 — Jerarquía editorial y capas interactivas](https://github.com/MirkovicV2/daniel-doral-portfolio/pull/2). Sus referencias y decisiones están en [DESIGN_RESEARCH.md](DESIGN_RESEARCH.md).
+
 El bloqueo de la cuenta anterior se resolvió al autorizar GitHub CLI con la cuenta nueva. GitHub CLI guarda la autenticación en el almacén de credenciales del sistema. Este repositorio utiliza su ayudante de credenciales local; no se guardan credenciales en el código ni se cambia el ayudante de otros proyectos.
 
 ## Flujo habitual

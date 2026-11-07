@@ -29,6 +29,7 @@ En `artifacts/screenshots/`:
 - `inicio-375.png`, `inicio-768.png`, `inicio-1440.png`.
 - `inicio-completa-375.png`, `inicio-completa-768.png`, `inicio-completa-1440.png`.
 - `caso-deja-vu-375.png`, `caso-deja-vu-1440.png`.
+- `grafico-deja-vu-375.png`, `grafico-deja-vu-1440.png`: composición completa, revisada sin recortes de sus letras y acentos.
 
 El informe navegable de Playwright queda en `playwright-report/index.html`. Capturas, informes y fixtures están excluidos de Git.
 
