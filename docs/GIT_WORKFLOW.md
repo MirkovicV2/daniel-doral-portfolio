@@ -12,7 +12,7 @@ Git no estaba disponible en PATH. Se ha preparado MinGit oficial en `C:\Users\br
 
 ## Repositorio y revisión
 
-Repositorio privado de la cuenta **MirkovicV2**: https://github.com/MirkovicV2/daniel-doral-portfolio.
+Repositorio público de la cuenta **MirkovicV2**: https://github.com/MirkovicV2/daniel-doral-portfolio. La web publicada está en https://mirkovicv2.github.io/daniel-doral-portfolio/.
 
 La implementación se integra hacia `develop` mediante la [PR #1 — Portfolio profesional](https://github.com/MirkovicV2/daniel-doral-portfolio/pull/1).
 
