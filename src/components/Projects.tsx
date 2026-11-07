@@ -21,9 +21,12 @@ export function FeaturedProject({
     >
       <div className="featured-media">
         <ProjectVisual kind={project.visual} />
+        <span className="project-open" aria-hidden="true">
+          <Arrow diagonal />
+        </span>
       </div>
       <div className="featured-info">
-        <Eyebrow>01 / Trabajo comercial</Eyebrow>
+        <Eyebrow>01 / Encargo comercial · 2026</Eyebrow>
         <h3>{project.shortTitle}</h3>
         <p>{project.summary}</p>
         <div className="tags">
@@ -60,6 +63,9 @@ export function ProjectRows({
             <span className="row-context">{project.contextLabel}</span>
             <h3>{project.shortTitle}</h3>
             <p>{project.summary}</p>
+          </div>
+          <div className="row-preview" aria-hidden="true">
+            <ProjectVisual kind={project.visual} compact />
           </div>
           <div className="row-end">
             <span className="project-category">{project.category}</span>

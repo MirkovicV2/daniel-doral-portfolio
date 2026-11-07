@@ -4,15 +4,25 @@ export function Architecture() {
   return (
     <div
       className="architecture"
-      role="img"
-      aria-label="Esquema conceptual original: interfaz, API y datos conectados"
+      role="group"
+      aria-label="Explora las capas de una aplicación"
     >
       <div className="architecture-top">
-        <span>DEL PROBLEMA A LA APLICACIÓN</span>
-        <span aria-hidden="true">↗</span>
+        <span>UNA MIRADA AL SISTEMA COMPLETO</span>
+        <span className="architecture-cross" aria-hidden="true">
+          +
+        </span>
       </div>
       <div className="architecture-grid" aria-hidden="true">
-        <div className="architecture-line" />
+        <svg className="architecture-wires" viewBox="0 0 640 220" fill="none">
+          <path
+            d="M130 122H275V66H465V122H555M275 66V174H465V122"
+            stroke="currentColor"
+            strokeWidth="1"
+          />
+          <circle cx="275" cy="122" r="4" fill="currentColor" />
+          <circle cx="465" cy="122" r="4" fill="currentColor" />
+        </svg>
         <div className="layer layer-ui">
           <span className="layer-index">01 / INTERFAZ</span>
           <div className="mini-interface">
@@ -21,12 +31,12 @@ export function Architecture() {
             <i />
             <span />
           </div>
-          <strong>Lo que usas.</strong>
+          <strong>Interfaz</strong>
         </div>
         <div className="layer layer-api">
           <span className="layer-index">02 / API</span>
           <span className="api-symbol">{'{ }'}</span>
-          <strong>Lo que conecta.</strong>
+          <strong>Conexión</strong>
         </div>
         <div className="layer layer-data">
           <span className="layer-index">03 / DATOS</span>
@@ -35,16 +45,32 @@ export function Architecture() {
             <i />
             <i />
           </div>
-          <strong>Lo que importa.</strong>
+          <strong>Datos</strong>
         </div>
       </div>
-      <div className="architecture-bottom">
-        <span>INTERFAZ</span>
-        <span>↔</span>
-        <span>SERVICIOS</span>
-        <span>↔</span>
-        <span>DATOS</span>
+      <div className="stack-choices">
+        <details name="application-layers" data-stack-part="interface" open>
+          <summary>
+            <span>01</span> Interfaz <span aria-hidden="true">↗</span>
+          </summary>
+          <p>Angular. Una forma clara de trabajar con la aplicación.</p>
+        </details>
+        <details name="application-layers" data-stack-part="api">
+          <summary>
+            <span>02</span> Servicios <span aria-hidden="true">↗</span>
+          </summary>
+          <p>Java y Spring. Lógica de negocio y APIs que conectan piezas.</p>
+        </details>
+        <details name="application-layers" data-stack-part="data">
+          <summary>
+            <span>03</span> Datos <span aria-hidden="true">↗</span>
+          </summary>
+          <p>Oracle y JPA. Conexión entre la aplicación y sus datos.</p>
+        </details>
       </div>
+      <span className="architecture-caption">
+        ESQUEMA CONCEPTUAL · EXPLORA CADA CAPA
+      </span>
     </div>
   );
 }

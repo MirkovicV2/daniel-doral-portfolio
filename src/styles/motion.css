@@ -2,21 +2,21 @@
   navigation: auto;
 }
 ::view-transition-old(root) {
-  animation: page-out 0.17s ease both;
+  animation: page-out 0.14s ease both;
 }
 ::view-transition-new(root) {
-  animation: page-in 0.28s ease both;
+  animation: page-in 0.24s ease both;
 }
 @keyframes page-out {
   to {
     opacity: 0;
-    transform: translateY(-6px);
+    transform: translateY(-4px);
   }
 }
 @keyframes page-in {
   from {
     opacity: 0;
-    transform: translateY(9px);
+    transform: translateY(8px);
   }
   to {
     opacity: 1;
@@ -26,37 +26,53 @@
 @keyframes enter {
   from {
     opacity: 0;
-    transform: translateY(18px);
+    transform: translateY(16px);
   }
   to {
     opacity: 1;
     transform: none;
   }
 }
+@keyframes trace {
+  from {
+    stroke-dashoffset: 800;
+  }
+  to {
+    stroke-dashoffset: 0;
+  }
+}
 [data-reveal] {
   transition:
-    opacity 0.55s var(--ease),
-    transform 0.55s var(--ease);
+    opacity 0.5s var(--ease),
+    transform 0.5s var(--ease);
 }
 .will-reveal {
   opacity: 0;
-  transform: translateY(18px);
+  transform: translateY(22px);
 }
 @media (prefers-reduced-motion: no-preference) {
-  .hero-copy > .eyebrow {
-    animation: enter 0.6s var(--ease) both;
+  .hero-heading > .eyebrow {
+    animation: enter 0.5s var(--ease) both;
   }
   .hero h1 {
-    animation: enter 0.6s 0.06s var(--ease) both;
+    animation: enter 0.6s 0.04s var(--ease) both;
   }
-  .hero-description {
-    animation: enter 0.6s 0.12s var(--ease) both;
-  }
-  .hero-actions {
-    animation: enter 0.6s 0.18s var(--ease) both;
+  .hero-copy {
+    animation: enter 0.55s 0.1s var(--ease) both;
   }
   .hero-art {
     animation: enter 0.6s 0.12s var(--ease) both;
+  }
+  .architecture-wires path {
+    stroke-dasharray: 800;
+    animation: trace 0.6s 0.2s ease both;
+  }
+  .stack-choices details[open] p {
+    animation: enter 0.18s ease both;
+  }
+  .featured-media,
+  .case-cover {
+    view-transition-name: project-cover;
   }
 }
 @media (prefers-reduced-motion: reduce) {

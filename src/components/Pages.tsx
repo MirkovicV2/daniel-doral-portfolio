@@ -10,18 +10,22 @@ export function Home() {
   return (
     <>
       <section className="hero shell">
-        <div className="hero-copy">
+        <div className="hero-heading">
           <Eyebrow>
-            <span className="status-dot" />
-            Full stack · Madrid / Rivas Vaciamadrid
+            <span className="hero-index">DD /</span>
+            Daniel Doral · Desarrollo full stack
           </Eyebrow>
           <h1>
-            Desarrollo aplicaciones web que conectan{' '}
-            <span>negocio, datos y procesos.</span>
+            Del problema
+            <br />
+            <span>al sistema completo.</span>
           </h1>
+          <span className="hero-coordinate">MADRID / RIVAS VACIAMADRID</span>
+        </div>
+        <div className="hero-copy">
           <p className="hero-description">
-            Soy Daniel. Trabajo con Java, Spring y Angular para construir
-            aplicaciones, conectar servicios y modernizar software empresarial.
+            Desarrollo aplicaciones web que conectan negocio, datos y procesos.
+            De la interfaz al backend, con Java, Spring y Angular.
           </p>
           <div className="hero-actions">
             <Action href="/proyectos/">Ver proyectos</Action>
@@ -32,23 +36,24 @@ export function Home() {
         </div>
         <div className="hero-art">
           <Architecture />
-          <p className="art-caption">Una mirada al sistema completo.</p>
         </div>
         <div className="hero-bottom">
-          <span>JAVA / SPRING</span>
-          <span>ANGULAR</span>
-          <span>APIS E INTEGRACIONES</span>
-          <span>MODERNIZACIÓN</span>
+          <span>
+            <span className="status-dot" /> SOFTWARE · PERSONAS · PROCESOS
+          </span>
+          <a href="#proyectos">
+            Explora mi trabajo <Arrow />
+          </a>
         </div>
       </section>
       <section className="section shell" id="proyectos">
         <div className="section-heading heading-inline" data-reveal>
           <div>
-            <Eyebrow number="01">Proyectos seleccionados</Eyebrow>
+            <Eyebrow number="01">Proyectos seleccionados / 05</Eyebrow>
             <h2>
-              El trabajo,
+              Menos abstracción.
               <br />
-              <span className="muted">en contexto.</span>
+              <span className="muted">Más contexto.</span>
             </h2>
           </div>
           <p>
@@ -63,8 +68,8 @@ export function Home() {
           <Arrow />
         </a>
       </section>
-      <Experience />
       <Capabilities />
+      <Experience />
       <section className="section shell about-strip" data-reveal>
         <div>
           <Eyebrow number="04">Sobre mí</Eyebrow>
