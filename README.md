@@ -2,7 +2,7 @@
 
 Proyecto independiente del portfolio de Daniel Doral Ignjatovic. La implementación se desarrolla en `feature/portfolio-daniel`, desde `develop`. `main` conserva el punto de partida.
 
-El contenido sigue `Prompts_Codex_Daniel_Pablo.md`, facilitado el 7 de noviembre de 2026. No hay despliegue en producción.
+El contenido sigue `Prompts_Codex_Daniel_Pablo.md`, facilitado el 7 de noviembre de 2026. Web pública: https://mirkovicv2.github.io/daniel-doral-portfolio/.
 
 ## Ejecutar en este equipo
 
@@ -60,7 +60,7 @@ Los esquemas y las composiciones tipográficas son originales. No se reutilizan 
 
 El contacto abre el correo profesional real. No existe formulario simulado.
 
-## SEO y futuro despliegue
+## SEO y despliegue
 
 `npm.cmd run test:seo` comprueba la configuración SEO con una URL reservada `.invalid` en una salida de prueba aislada. No modifica `dist/`.
 
@@ -71,13 +71,13 @@ Copiar `.env.example` a `.env` cuando exista un dominio aprobado:
 - `SITE_URL`: URL real de producción. Activa canonical, Open Graph absoluto, `sitemap-index.xml`, `sitemap-0.xml` y robots indexable.
 - `PUBLIC_STUDIO_URL`: enlace opcional al estudio, solo cuando exista una URL real.
 
-Sin dominio, la entrega local queda en noindex y no genera URLs de producción inventadas. La 404 queda fuera del sitemap. Después de completar la configuración, ejecutar build y revisar el contenido antes de cualquier despliegue.
+La publicación usa GitHub Pages desde `develop` mediante `.github/workflows/deploy-pages.yml`. El workflow configura `SITE_URL` y `PAGES_BASE=/daniel-doral-portfolio`, genera sitemap y canonical y despliega `dist/`. La web se sirve bajo https://mirkovicv2.github.io/daniel-doral-portfolio/; el repositorio también es público.
 
-`dist/` puede alojarse más adelante en un servidor estático con rutas por directorio y `404.html` para errores. Esta entrega no configura alojamiento.
+El HTML estático usa rutas por directorio y `404.html` para errores.
 
 ## Git, pruebas y pendientes
 
-Repositorio privado: [MirkovicV2/daniel-doral-portfolio](https://github.com/MirkovicV2/daniel-doral-portfolio). Las ramas `main`, `develop` y `feature/portfolio-daniel` están publicadas en `origin` y tienen seguimiento local. La integración se realiza hacia `develop` mediante la [PR #1](https://github.com/MirkovicV2/daniel-doral-portfolio/pull/1); `main` queda reservada para versiones estables.
+Repositorio público: [MirkovicV2/daniel-doral-portfolio](https://github.com/MirkovicV2/daniel-doral-portfolio). Las ramas `main`, `develop` y `feature/portfolio-daniel` están publicadas en `origin` y tienen seguimiento local. La integración se realiza hacia `develop` mediante la [PR #1](https://github.com/MirkovicV2/daniel-doral-portfolio/pull/1); `main` queda reservada para versiones estables.
 
 - [Flujo Git y pasos para publicar ramas](docs/GIT_WORKFLOW.md).
 - [Descripción de PR preparada](docs/PR_PORTFOLIO.md).
