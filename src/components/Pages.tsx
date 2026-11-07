@@ -5,6 +5,7 @@ import { Architecture, ProjectVisual } from './ProjectVisual';
 import { FeaturedProject, ProjectRows } from './Projects';
 import { Capabilities, Education, Experience } from './Profile';
 import { Contact } from './Contact';
+import { withBase } from '../utils/paths';
 
 export function Home() {
   return (
@@ -28,8 +29,8 @@ export function Home() {
             De la interfaz al backend, con Java, Spring y Angular.
           </p>
           <div className="hero-actions">
-            <Action href="/proyectos/">Ver proyectos</Action>
-            <Action secondary href="/contacto/">
+            <Action href={withBase('/proyectos/')}>Ver proyectos</Action>
+            <Action secondary href={withBase('/contacto/')}>
               Contactar
             </Action>
           </div>
@@ -63,7 +64,7 @@ export function Home() {
         </div>
         <FeaturedProject />
         <ProjectRows />
-        <a className="text-link all-projects" href="/proyectos/">
+        <a className="text-link all-projects" href={withBase('/proyectos/')}>
           Explorar todos los casos
           <Arrow />
         </a>
@@ -90,7 +91,7 @@ export function Home() {
             diseño y contenido visual. Nuestro trabajo conjunto en Déjà Vu es un
             primer ejemplo de esa colaboración.
           </p>
-          <a className="text-link" href="/sobre-mi/">
+          <a className="text-link" href={withBase('/sobre-mi/')}>
             Conocer mi enfoque
             <Arrow />
           </a>
@@ -153,7 +154,7 @@ export function AboutPage() {
               un proyecto, me interesa explicar la necesidad, mi contribución y
               el contexto de las decisiones.
             </p>
-            <a className="text-link" href="/#experiencia">
+            <a className="text-link" href={withBase('/#experiencia')}>
               Ver mi experiencia
               <Arrow />
             </a>
@@ -181,7 +182,9 @@ export function AboutPage() {
             por la suya.
           </p>
           <div className="contact-actions">
-            <Action href="/proyectos/deja-vu/">Ver el caso conjunto</Action>
+            <Action href={withBase('/proyectos/deja-vu/')}>
+              Ver el caso conjunto
+            </Action>
             <a
               className="text-link"
               href={portfolio.collaborator.url}
@@ -217,7 +220,7 @@ export function CasePage({ project }: { project: Project }) {
     <>
       <article>
         <header className="case-intro shell">
-          <a className="back-link" href="/proyectos/">
+          <a className="back-link" href={withBase('/proyectos/')}>
             ← Todos los proyectos
           </a>
           <Eyebrow>{project.contextLabel}</Eyebrow>
@@ -332,7 +335,7 @@ export function CasePage({ project }: { project: Project }) {
       {next && (
         <section className="next-case shell" data-reveal>
           <Eyebrow>Siguiente proyecto</Eyebrow>
-          <a href={`/proyectos/${next.slug}/`}>
+          <a href={withBase(`/proyectos/${next.slug}/`)}>
             <span>{next.shortTitle}</span>
             <Arrow diagonal />
           </a>
@@ -356,8 +359,8 @@ export function NotFound() {
         Puedes volver al inicio, conocer mi trabajo o escribirme directamente.
       </p>
       <div className="hero-actions">
-        <Action href="/">Volver al inicio</Action>
-        <Action secondary href="/proyectos/">
+        <Action href={withBase('/')}>Volver al inicio</Action>
+        <Action secondary href={withBase('/proyectos/')}>
           Ver proyectos
         </Action>
       </div>

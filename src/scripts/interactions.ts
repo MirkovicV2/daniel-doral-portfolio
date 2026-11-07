@@ -27,6 +27,20 @@ if (!motion.matches && 'IntersectionObserver' in window) {
     }
   });
 }
+const architecture = document.querySelector<HTMLElement>('.architecture');
+if (architecture) {
+  const controls = Array.from(
+    architecture.querySelectorAll<HTMLDetailsElement>('[data-stack-part]'),
+  );
+  const syncActiveLayer = () => {
+    const active = controls.find((control) => control.open) ?? controls[0];
+    if (active?.dataset.stackPart)
+      architecture.dataset.activeLayer = active.dataset.stackPart;
+  };
+  syncActiveLayer();
+  for (const control of controls)
+    control.addEventListener('toggle', syncActiveLayer);
+}
 const menu = document.querySelector<HTMLDetailsElement>('[data-mobile-menu]');
 if (menu) {
   menu.addEventListener('click', (event) => {
