@@ -6,11 +6,11 @@ export function Experience() {
   return (
     <section className="section shell experience-section" id="experiencia">
       <div className="section-heading" data-reveal>
-        <Eyebrow number="02">Experiencia profesional</Eyebrow>
+        <Eyebrow number="03">Experiencia profesional</Eyebrow>
         <h2>
-          Una trayectoria.
+          El recorrido
           <br />
-          <span className="muted">Distintos problemas que resolver.</span>
+          <span className="muted">detrás del código.</span>
         </h2>
       </div>
       <div className="timeline">
@@ -41,7 +41,7 @@ export function Capabilities() {
   return (
     <section className="section shell" id="capacidades">
       <div className="section-heading" data-reveal>
-        <Eyebrow number="03">Capacidades</Eyebrow>
+        <Eyebrow number="02">Capacidades</Eyebrow>
         <h2>
           De la interfaz
           <br />

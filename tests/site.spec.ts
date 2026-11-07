@@ -106,6 +106,10 @@ for (const width of [375, 768, 1440]) {
           path: `${screenshotDirectory}/caso-deja-vu-${width}.png`,
           animations: 'disabled',
         });
+        await page.locator('.case-cover').screenshot({
+          path: `${screenshotDirectory}/grafico-deja-vu-${width}.png`,
+          animations: 'disabled',
+        });
       }
     }
   });
@@ -153,7 +157,37 @@ test('Contenido disponible sin JavaScript', async ({ browser, baseURL }) => {
   ).toBeVisible();
   await page.locator('[data-mobile-menu] summary').click();
   await expect(page.locator('[data-mobile-menu] nav')).toBeVisible();
+  const dataLayer = page.locator('[data-stack-part="data"]');
+  await dataLayer.locator('summary').click();
+  await expect(dataLayer.locator('p')).toBeVisible();
+  await expect(dataLayer.locator('p')).toContainText('Oracle y JPA');
   await context.close();
+});
+
+test('Exploración de capas con teclado y cambio de preferencia de movimiento', async ({
+  page,
+}) => {
+  await page.goto('/');
+  const serviceLayer = page.locator('[data-stack-part="api"]');
+  await serviceLayer.locator('summary').focus();
+  await page.keyboard.press('Enter');
+  await expect(serviceLayer).toHaveAttribute('open', '');
+  await expect(
+    page.locator('[data-stack-part="interface"]'),
+  ).not.toHaveAttribute('open', '');
+  await expect(serviceLayer.locator('p')).toBeVisible();
+  await page.locator('#capacidades').scrollIntoViewIfNeeded();
+  await expect(page.locator('#capacidades .section-heading')).toHaveCSS(
+    'opacity',
+    '1',
+  );
+  await page.emulateMedia({ reducedMotion: 'reduce' });
+  await expect(page.locator('.will-reveal')).toHaveCount(0);
+  expect(
+    await page
+      .locator('h1')
+      .evaluate((element) => getComputedStyle(element).animationName),
+  ).toBe('none');
 });
 
 test('Preferencia de movimiento reducido', async ({ page }) => {
