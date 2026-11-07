@@ -32,7 +32,9 @@ git switch feature/portfolio-daniel
 git merge develop
 ```
 
-Publicar los siguientes commits en la rama de trabajo y abrir la PR correspondiente hacia `develop`. No hacer force push ni borrar las ramas requeridas. `main` queda reservada para la promoción de una versión estable. El repositorio no configura GitHub Pages ni un despliegue del sitio.
+Publicar los siguientes commits en la rama de trabajo y abrir la PR correspondiente hacia `develop`. No hacer force push ni borrar las ramas requeridas. `main` queda reservada para la promoción de una versión estable.
+
+La configuración de Astro admite `SITE_URL` y `PAGES_BASE` para desplegar bajo una ruta de GitHub Pages. Pages no está activado: GitHub rechazó configurarlo porque el plan actual no permite Pages para este repositorio privado. Se mantiene privado; publicar requiere un plan compatible o un repositorio público separado para el artefacto estático.
 
 En este equipo puede añadirse Git solo al terminal actual:
 

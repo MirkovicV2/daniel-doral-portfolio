@@ -1,6 +1,7 @@
 import { projects, type Project } from '../content/projects';
 import { Arrow, Eyebrow } from './Primitives';
 import { ProjectVisual } from './ProjectVisual';
+import { withBase } from '../utils/paths';
 
 export function FeaturedProject({
   project = projects[0],
@@ -16,7 +17,7 @@ export function FeaturedProject({
   return (
     <a
       className="featured-project"
-      href={`/proyectos/${project.slug}/`}
+      href={withBase(`/proyectos/${project.slug}/`)}
       data-reveal
     >
       <div className="featured-media">
@@ -51,7 +52,7 @@ export function ProjectRows({
     <div className="project-rows">
       {items.map((project, index) => (
         <a
-          href={`/proyectos/${project.slug}/`}
+          href={withBase(`/proyectos/${project.slug}/`)}
           className="project-row"
           key={project.slug}
           data-reveal

@@ -1,4 +1,5 @@
 import { portfolio } from '../content/site';
+import { stripBase, withBase } from '../utils/paths';
 import { Arrow } from './Primitives';
 
 const items = [
@@ -7,9 +8,14 @@ const items = [
   { href: '/sobre-mi/', label: 'Sobre mí' },
 ];
 export function Header({ path }: { path: string }) {
+  const currentPath = stripBase(path);
   return (
     <header className="site-header shell">
-      <a className="wordmark" href="/" aria-label="Daniel Doral, inicio">
+      <a
+        className="wordmark"
+        href={withBase('/')}
+        aria-label="Daniel Doral, inicio"
+      >
         <span className="monogram" aria-hidden="true">
           d.
         </span>
@@ -22,10 +28,11 @@ export function Header({ path }: { path: string }) {
         {items.map((item) => (
           <a
             key={item.href}
-            href={item.href}
+            href={withBase(item.href)}
             aria-current={
-              path === item.href ||
-              (item.href === '/proyectos/' && path.startsWith('/proyectos/'))
+              currentPath === item.href ||
+              (item.href === '/proyectos/' &&
+                currentPath.startsWith('/proyectos/'))
                 ? 'page'
                 : undefined
             }
@@ -35,8 +42,8 @@ export function Header({ path }: { path: string }) {
         ))}
         <a
           className="nav-contact"
-          href="/contacto/"
-          aria-current={path === '/contacto/' ? 'page' : undefined}
+          href={withBase('/contacto/')}
+          aria-current={currentPath === '/contacto/' ? 'page' : undefined}
         >
           Hablemos
           <Arrow diagonal />
@@ -51,11 +58,11 @@ export function Header({ path }: { path: string }) {
         </summary>
         <nav aria-label="Navegación móvil">
           {items.map((item) => (
-            <a key={item.href} href={item.href}>
+            <a key={item.href} href={withBase(item.href)}>
               {item.label}
             </a>
           ))}
-          <a href="/contacto/">
+          <a href={withBase('/contacto/')}>
             Hablemos <Arrow diagonal />
           </a>
         </nav>
@@ -67,7 +74,7 @@ export function Header({ path }: { path: string }) {
 export function Footer() {
   return (
     <footer className="site-footer shell">
-      <a className="footer-name" href="/">
+      <a className="footer-name" href={withBase('/')}>
         {portfolio.shortName}
         <span>Desarrollo full stack · Madrid</span>
       </a>
