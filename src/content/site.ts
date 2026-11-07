@@ -6,7 +6,7 @@ export const portfolio = {
   email: 'danieldoral7@gmail.com',
   linkedin: 'https://es.linkedin.com/in/daniel-doral-ignjatovic',
   collaborator: { name: 'Pablo Castillo Flores', url: 'https://pablelas.es/' },
-  studioUrl: import.meta.env.PUBLIC_STUDIO_URL?.trim() || undefined,
+  studioUrl: import.meta.env?.PUBLIC_STUDIO_URL?.trim() || undefined,
 };
 
 export const personSchema = {
