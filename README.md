@@ -77,7 +77,7 @@ Sin dominio, la entrega local queda en noindex y no genera URLs de producción i
 
 ## Git, pruebas y pendientes
 
-GitHub devuelve HTTP 403: `Sorry. Your account was suspended`. Las ramas y los commits se conservan localmente, sin remotos o upstreams ficticios. No se han creado el repositorio privado ni las pull requests. `develop` se conserva como base para integrar mediante PR cuando se restablezca el acceso.
+Repositorio privado: [MirkovicV2/daniel-doral-portfolio](https://github.com/MirkovicV2/daniel-doral-portfolio). Las ramas `main`, `develop` y `feature/portfolio-daniel` están publicadas en `origin` y tienen seguimiento local. La integración se realiza hacia `develop` mediante la [PR #1](https://github.com/MirkovicV2/daniel-doral-portfolio/pull/1); `main` queda reservada para versiones estables.
 
 - [Flujo Git y pasos para publicar ramas](docs/GIT_WORKFLOW.md).
 - [Descripción de PR preparada](docs/PR_PORTFOLIO.md).

@@ -32,4 +32,4 @@ El informe navegable de Playwright queda en `playwright-report/index.html`. Capt
 
 Las peticiones HEAD a https://pablelas.es/, https://pablelas.es/proyectos/deja-vu y https://bar-dejavu-kebab.es/ respondieron HTTP 200. No se enviaron formularios, mensajes ni correos.
 
-El acceso a GitHub está bloqueado por HTTP 403: `Sorry. Your account was suspended`. No se ha podido verificar publicación remota, upstreams ni pull requests. Ver `docs/GIT_WORKFLOW.md`. No hay despliegue en producción.
+Se ha verificado que [MirkovicV2/daniel-doral-portfolio](https://github.com/MirkovicV2/daniel-doral-portfolio) es privado y que `main`, `develop` y `feature/portfolio-daniel` están publicadas con seguimiento de `origin`. La integración hacia `develop` se realiza mediante la [PR #1](https://github.com/MirkovicV2/daniel-doral-portfolio/pull/1). El bloqueo de la cuenta anterior quedó resuelto al autorizar la cuenta nueva. Ver `docs/GIT_WORKFLOW.md`. No hay despliegue en producción.
