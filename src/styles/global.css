@@ -1188,11 +1188,34 @@ ul {
   .project-row:hover .row-main h3 {
     color: var(--accent);
   }
+  .project-row:hover .row-number {
+    color: var(--accent);
+    transform: translateX(5px);
+  }
   .project-row:hover .row-preview .project-visual {
     transform: scale(1.06);
   }
   .project-row:hover .row-end .arrow {
     transform: translate(3px, -3px);
+    color: var(--accent);
+  }
+  .capability:hover .capability-number {
+    transform: translateY(-3px);
+    color: var(--ink);
+  }
+  .timeline-item:hover .timeline-dot {
+    transform: scale(1.35);
+    box-shadow: 0 0 0 5px #84b59a1c;
+  }
+}
+@media (prefers-reduced-motion: no-preference) {
+  .featured-project:focus-visible .project-visual,
+  .project-row:focus-visible .row-preview .project-visual {
+    transform: scale(1.025);
+  }
+  .project-row:focus-visible .row-main h3,
+  .project-row:focus-visible .row-number,
+  .project-row:focus-visible .row-end .arrow {
     color: var(--accent);
   }
 }

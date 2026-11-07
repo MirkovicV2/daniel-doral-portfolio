@@ -41,6 +41,16 @@
     stroke-dashoffset: 0;
   }
 }
+@keyframes layer-arrive {
+  0% {
+    filter: brightness(1.25);
+    box-shadow: 0 0 0 0 #84b59a00;
+  }
+  100% {
+    filter: none;
+    box-shadow: 0 12px 28px #05080666;
+  }
+}
 [data-reveal] {
   transition:
     opacity 0.5s var(--ease),
@@ -66,6 +76,45 @@
   .architecture-wires path {
     stroke-dasharray: 800;
     animation: trace 0.6s 0.2s ease both;
+  }
+  .layer {
+    transition:
+      transform 0.38s var(--ease),
+      background-color 0.3s ease,
+      border-color 0.3s ease,
+      box-shadow 0.3s ease;
+  }
+  .architecture[data-active-layer='interface'] .layer-ui,
+  .architecture[data-active-layer='api'] .layer-api,
+  .architecture[data-active-layer='data'] .layer-data {
+    animation: layer-arrive 0.38s var(--ease) both;
+  }
+  .stack-choices summary > span:last-child {
+    transition: transform 0.2s ease;
+  }
+  .stack-choices details[open] summary > span:last-child {
+    transform: rotate(45deg);
+  }
+  .project-row .row-number,
+  .capability-number,
+  .timeline-dot {
+    transition:
+      color 0.22s ease,
+      transform 0.28s var(--ease),
+      background-color 0.22s ease,
+      box-shadow 0.22s ease;
+  }
+  .project-rows [data-reveal].will-reveal:nth-child(2) {
+    transition-delay: 70ms;
+  }
+  .project-rows [data-reveal].will-reveal:nth-child(3) {
+    transition-delay: 120ms;
+  }
+  .project-rows [data-reveal].will-reveal:nth-child(4) {
+    transition-delay: 170ms;
+  }
+  .project-rows [data-reveal].will-reveal:nth-child(5) {
+    transition-delay: 220ms;
   }
   .stack-choices details[open] p {
     animation: enter 0.18s ease both;
