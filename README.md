@@ -82,6 +82,7 @@ Repositorio privado: [MirkovicV2/daniel-doral-portfolio](https://github.com/Mirk
 - [Flujo Git y pasos para publicar ramas](docs/GIT_WORKFLOW.md).
 - [Descripción de PR preparada](docs/PR_PORTFOLIO.md).
 - [Verificaciones y capturas](VERIFICATION.md).
+- [Investigación de referencias y decisiones de diseño](docs/DESIGN_RESEARCH.md).
 - [Procedencia, datos y recursos pendientes](CONTENT_REVIEW.md).
 
 Documentación oficial consultada: [Astro con React](https://docs.astro.build/en/guides/integrations-guide/react/), [sitemap](https://docs.astro.build/en/guides/integrations-guide/sitemap/), [transiciones](https://docs.astro.build/en/guides/view-transitions/) y [Fontsource](https://fontsource.org/docs/getting-started/variable).
