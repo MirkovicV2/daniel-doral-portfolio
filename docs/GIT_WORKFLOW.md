@@ -34,7 +34,7 @@ git merge develop
 
 Publicar los siguientes commits en la rama de trabajo y abrir la PR correspondiente hacia `develop`. No hacer force push ni borrar las ramas requeridas. `main` queda reservada para la promoción de una versión estable.
 
-La configuración de Astro admite `SITE_URL` y `PAGES_BASE` para desplegar bajo una ruta de GitHub Pages. Pages no está activado: GitHub rechazó configurarlo porque el plan actual no permite Pages para este repositorio privado. Se mantiene privado; publicar requiere un plan compatible o un repositorio público separado para el artefacto estático.
+GitHub Pages se despliega automáticamente al integrar cambios en `develop`, mediante `.github/workflows/deploy-pages.yml`. La configuración de Astro usa `SITE_URL` y `PAGES_BASE` para construir bajo la ruta del repositorio. El repositorio fuente es público.
 
 En este equipo puede añadirse Git solo al terminal actual:
 
